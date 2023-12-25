@@ -35,7 +35,6 @@ Docker and Docker Compose
 ### Clone the Repository
 Clone this repository to your local machine:
 
-bash
 ```
 git clone <repository-url>
 cd <repository-folder>
@@ -44,7 +43,6 @@ cd <repository-folder>
 ### Install Dependencies
 Install the required dependencies using Maven:
 
-bash
 ```
 mvn clean install
 ```
@@ -52,7 +50,6 @@ mvn clean install
 ### Docker Services
 Use Docker Compose to set up the required services:
 
-bash
 ```
 docker-compose up -d
 ```
@@ -62,7 +59,6 @@ This command will download necessary Docker images, create containers, and start
 ### Verify Services
 Check if all services are up and running:
 
-bash
 ```
 docker-compose ps
 ```
@@ -77,7 +73,6 @@ Elasticsearch: Default port 9200
 ### Shutting Down
 To stop and remove containers, networks, and volumes:
 
-bash
 ```
 docker-compose down
 ```
