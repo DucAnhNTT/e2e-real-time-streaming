@@ -34,12 +34,12 @@ public class JSONValueDeserializationSchema implements DeserializationSchema<Tra
 
     @Override
     public boolean isEndOfStream(Transaction t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return false;
     }
 
     @Override
     public TypeInformation<Transaction> getProducedType() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return TypeInformation.of(Transaction.class);
     }
     
 }
