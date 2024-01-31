@@ -20,16 +20,15 @@
 This project guides you through building an end-to-end data engineering system using Apache Flink, Kafka, Elasticsearch, Kibana, and Docker. The system processes real-time data and generates analytics, demonstrating the power of these technologies in an industry-grade data pipeline.
 
 ## System Architecture
-System Architecture
 ![](./image-for-project/architecture.jpg)
 
 ## Prerequisites
 Before running this project, ensure you have the following installed:
 
-[JDK 17](https://www.oracle.com/java/technologies/downloads/#java17)
-[Apache Flink](https://flink.apache.org/downloads/)
-[Kafka architecture](https://docs.confluent.io/platform/current/connect/index.html)
-[Docker](https://docs.confluent.io/platform/current/connect/index.html)
+* [JDK 17](https://www.oracle.com/java/technologies/downloads/#java17)
+* [Apache Flink](https://flink.apache.org/downloads/)
+* [Kafka architecture](https://docs.confluent.io/platform/current/connect/index.html)
+* [Docker](https://docs.confluent.io/platform/current/connect/index.html)
 
 ## Installation
 ### Clone the Repository
@@ -66,9 +65,26 @@ You should see all services listed as 'running'.
 
 
 ### Accessing the Services
-Kafka Control Center: http://localhost:9021
-Debezium UI: http://localhost:8080
 Elasticsearch: Default port 9200
+Kibana: Default port 5601
+
+### Usage
+Ensure all Docker containers are up and running. Run the FlinkCommerce application provided in this repository to perform real-time analytics on financial transactions.
+
+### Application Details
+The DataStreamJob class within the FlinkCommerce package serves as the main entry point for the Flink application. The application consumes financial transaction data from Kafka, performs various transformations, and stores aggregated results in both Postgres and Elasticsearch.
+
+### Components
+Apache Flink Sets up the Flink execution environment. Connects to Kafka as a source for financial transaction data. Processes, transforms, and performs aggregations on transaction data streams. Postgres Stores transaction data and aggregated results in tables (transactions, sales_per_category, sales_per_day, sales_per_month). Elasticsearch Stores transaction data for further analysis.
+
+### Code Structure
+DataStreamJob.java: Contains the Flink application logic, including Kafka source setup, stream processing, transformations, and sinks for Postgres and Elasticsearch. Deserializer, Dto, and utils packages: Include necessary classes and utilities for deserialization, data transfer objects, and JSON conversion.
+
+### Configuration
+Kafka settings (bootstrap servers, topic, group ID) are configured within the Kafka source setup. Postgres connection details (URL, username, password) are defined in the jdbcUrl, username, and password variables.
+
+### Sink Operations
+The application includes sink operations for Postgres using JDBC to create tables (transactions, sales_per_category, sales_per_day, sales_per_month) and perform insert/update operations. Additionally, it includes an Elasticsearch sink to index transaction data for further analysis.
 
 ### Shutting Down
 To stop and remove containers, networks, and volumes:
