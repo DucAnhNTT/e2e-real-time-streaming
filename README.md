@@ -7,9 +7,9 @@
 * [Docker Services](#docker-services) 🐳
     * [Zookeeper](#zookeeper) 🐘
     * [Kafka Broker](#kafka-broker) 🚀
-    * [Debezium](#debezium) 🔄
-    * [Debezium UI](#debezium-ui) 💻
     * [Postgres](#postgres) 🐘
+    * [Flink](#flink)
+    * [ElasticSearch and Kibana](#ELKstack)
 * [Getting Started](#getting-started) 🚦
 * [Customization](#customization) 🛠️
 * 📚 [References](#references) 📖
@@ -21,15 +21,15 @@ This project guides you through building an end-to-end data engineering system u
 
 ## System Architecture
 System Architecture
+![](./image-for-project/architecture.svg)
 
 ## Prerequisites
 Before running this project, ensure you have the following installed:
 
-JDK 11+
-Apache Flink
-Kafka
-Elasticsearch
-Docker and Docker Compose
+[JDK 17](https://www.oracle.com/java/technologies/downloads/#java17)
+[Apache Flink](https://flink.apache.org/downloads/)
+[Kafka architecture](https://docs.confluent.io/platform/current/connect/index.html)
+[Docker](https://docs.confluent.io/platform/current/connect/index.html)
 
 ## Installation
 ### Clone the Repository

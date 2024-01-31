@@ -1,0 +1,5 @@
+-- CHECK THE DATA COMING FROM KAFKA BROKER
+docker exec -it broker /bin/bash
+kafka-console-consumer --topic financial_transactions --bootstrap-server broker:29092 --from-beginning
+
+
