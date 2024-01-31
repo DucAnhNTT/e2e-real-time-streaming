@@ -5,7 +5,6 @@
 * [Prerequisites](#prerequisites) 🛠️
 * [Installation](#installation) 🚀
 * [Docker Services](#docker-services) 🐳
-    * [Zookeeper](#zookeeper) 🐘
     * [Kafka Broker](#kafka-broker) 🚀
     * [Postgres](#postgres) 🐘
     * [Flink](#flink)
@@ -63,6 +62,28 @@ docker-compose ps
 ```
 You should see all services listed as 'running'.
 
+![](./image-for-project/docker.png.jpg)
+
+
+#### Kafka Broker 🚀
+After you streaming data via Python faker script to Kafka, check the availbility in broker terminal with the file in the path ./script/check-availibility-messages.txt
+![](./image-for-project/kafkapng.png)
+
+#### Postgres 🐘
+Checking data streaming to Postgre via Flink
+![](./image-for-project/postgres.png)
+
+#### Flink 
+Access Flink web page for running and monitoring jobs:
+![](./image-for-project/flink-webpage.png)
+![Alt text](./image-for-project/running-job-flink.png)
+
+
+#### ElasticSearch and Kibana
+Indexing transactions and create Realtime dashboard
+Accessing Elasticsearch and indexing the data in ElasticSearch to change the date format for visualizing
+![Alt text](./image-for-project/indexing-elasticsearch.png)
+![Alt text](./image-for-project/kibana-dashboard.png)
 
 ### Accessing the Services
 Elasticsearch: Default port 9200
