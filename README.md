@@ -21,7 +21,7 @@ This project guides you through building an end-to-end data engineering system u
 
 ## System Architecture
 System Architecture
-![](./image-for-project/architecture.svg)
+![](./image-for-project/architecture.jpg)
 
 ## Prerequisites
 Before running this project, ensure you have the following installed:
