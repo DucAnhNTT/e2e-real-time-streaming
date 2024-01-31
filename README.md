@@ -89,23 +89,41 @@ Accessing Elasticsearch and indexing the data in ElasticSearch to change the dat
 Elasticsearch: Default port 9200
 Kibana: Default port 5601
 
-### Usage
+### Usage 🚀
 Ensure all Docker containers are up and running. Run the FlinkCommerce application provided in this repository to perform real-time analytics on financial transactions.
 
-### Application Details
-The DataStreamJob class within the FlinkCommerce package serves as the main entry point for the Flink application. The application consumes financial transaction data from Kafka, performs various transformations, and stores aggregated results in both Postgres and Elasticsearch.
+### Application Details 📊
+The DataStreamJob class within the FlinkCommerce package serves as the main entry point for the Flink application. The application:
 
-### Components
-Apache Flink Sets up the Flink execution environment. Connects to Kafka as a source for financial transaction data. Processes, transforms, and performs aggregations on transaction data streams. Postgres Stores transaction data and aggregated results in tables (transactions, sales_per_category, sales_per_day, sales_per_month). Elasticsearch Stores transaction data for further analysis.
+- Consumes financial transaction data from Kafka.
+- Performs various transformations.
+- Stores aggregated results in both Postgres and Elasticsearch.
 
-### Code Structure
-DataStreamJob.java: Contains the Flink application logic, including Kafka source setup, stream processing, transformations, and sinks for Postgres and Elasticsearch. Deserializer, Dto, and utils packages: Include necessary classes and utilities for deserialization, data transfer objects, and JSON conversion.
+### Components 🛠️
+Apache Flink:
+Sets up the Flink execution environment.
+Connects to Kafka as a source for financial transaction data.
+Processes, transforms, and performs aggregations on transaction data streams.
 
-### Configuration
-Kafka settings (bootstrap servers, topic, group ID) are configured within the Kafka source setup. Postgres connection details (URL, username, password) are defined in the jdbcUrl, username, and password variables.
+Postgres:
+Stores transaction data and aggregated results in tables (transactions, sales_per_category, sales_per_day, sales_per_month).
 
-### Sink Operations
-The application includes sink operations for Postgres using JDBC to create tables (transactions, sales_per_category, sales_per_day, sales_per_month) and perform insert/update operations. Additionally, it includes an Elasticsearch sink to index transaction data for further analysis.
+Elasticsearch:
+Stores transaction data for further analysis.
+
+### Code Structure  📁
+DataStreamJob.java: Contains the Flink application logic, including Kafka source setup, stream processing, transformations, and sinks for Postgres and Elasticsearch.
+Deserializer, Dto, and utils packages: Include necessary classes and utilities for deserialization, data transfer objects, and JSON conversion.
+
+### Configuration ⚙️
+Kafka settings: Configured within the Kafka source setup (bootstrap servers, topic, group ID).
+Postgres connection details: Defined in the jdbcUrl, username, and password variables.
+
+### Sink Operations 🚢
+The application includes sink operations for Postgres using JDBC to:
+
+Create tables (transactions, sales_per_category, sales_per_day, sales_per_month).
+Perform insert/update operations.
 
 ### Shutting Down
 To stop and remove containers, networks, and volumes:
